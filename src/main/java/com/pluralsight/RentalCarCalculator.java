@@ -30,5 +30,7 @@ public class RentalCarCalculator {
         System.out.print("Enter your age: ");
         int age = Scanner.nextInt();
 
+
+
     }
 }
