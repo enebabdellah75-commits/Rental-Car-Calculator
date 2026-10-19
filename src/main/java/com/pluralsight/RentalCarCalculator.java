@@ -22,13 +22,52 @@ public class RentalCarCalculator {
         System.out.print("Do you want GPS? (yes/no): ");
         String gps = Scanner.next();
 
-        //asking if they want roadside assistance ?
+        //asking if they want roadside assistance
         System.out.print("Do you want roadside assistance? (yes/no): ");
         String roadside = Scanner.next();
 
         //asking for there age
         System.out.print("Enter your age: ");
         int age = Scanner.nextInt();
+
+        // Calculate basic rental cost
+        double basicRental = 29.99 * rentalDay;
+
+        //calculate optional cost
+        double optionsCost = 0;
+
+        //calculate tolltag price
+        if (tollTag.equalsIgnoreCase("yes")) {
+            optionsCost += 3.95 * rentalDay;
+        }
+        //calculate GPS price
+        if (gps.equalsIgnoreCase("yes")) {
+            optionsCost += 2.95 * rentalDay;
+        }
+
+
+        // calculate roadside price
+        if (roadside.equalsIgnoreCase("yes")) {
+            optionsCost += 3.95 * rentalDay;
+        }
+
+        //  Calculate underage surcharge
+        double underageSurcharge = 0;
+
+        // Calculate for under age of 25
+        if (age < 25) {
+            underageSurcharge = basicRental * 0.30;
+        }
+
+        // Calculate total
+        double totalCost = basicRental + optionsCost
+                + underageSurcharge;
+
+
+
+
+
+
 
 
 
